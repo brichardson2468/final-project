@@ -11,22 +11,6 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  
-  
-
-  //   useEffect(() => {
-  //   fetch('/me')
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => {
-  //         setIsAuthenticated(false);
-  //         setCurrentUser(user);
-  //         console.log("patient authenticated")
-  //       });
-  //     }
-  //   });
-  // }, []);
 
   useEffect(() => {
     fetch('/auth')
