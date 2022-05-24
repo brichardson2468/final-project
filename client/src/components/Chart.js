@@ -1,3 +1,4 @@
+import Utils from '../Utils';
 // <block:actions:2>
 const actions = [
     {
