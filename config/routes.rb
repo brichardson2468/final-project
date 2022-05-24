@@ -11,7 +11,5 @@ Rails.application.routes.draw do
 
   get '/auth', to: "doctors#show"
 
-  get '/signup', to: "doctors#create"
-
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
