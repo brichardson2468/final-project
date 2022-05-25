@@ -8,7 +8,7 @@ export default function Quiz() {
 		{
 			questionText: 'What year is it? (1)',
 			answerOptions: [
-				{ answerText: '0', isCorrect: false },
+				{ answerText: '0', isCorrect: false }, // will have to change isCorrect to checkboxIsClicked boolean, clicked add 1 point to sum
 				{ answerText: '1', isCorrect: true  },
 			],
 		},
@@ -151,7 +151,7 @@ export default function Quiz() {
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
-			setScore(score + 1);
+			setScore(score + 1);  //answerOptions needs category of point, since questions in order can have checkboxes that when clicked add 1 point then sum at end
 		}
 
 		const nextQuestion = currentQuestion + 1;
