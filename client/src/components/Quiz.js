@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-
+//MMSE scoring
+//24-30: no cognitive impairment
+//18-23: mild cognitive impairment
+//0-17: severe cognitive impairment
 export default function App() {
 	const questions = [
 		{
-			questionText: 'What year is it?',
+			questionText: 'What year is it? (1)',
 			answerOptions: [
 				{ answerText: 'New York', isCorrect: false },
 				{ answerText: 'London', isCorrect: false },
@@ -12,7 +15,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What season is it?',
+			questionText: 'What season is it? (1)',
 			answerOptions: [
 				{ answerText: 'Jeff Bezos', isCorrect: false },
 				{ answerText: 'Elon Musk', isCorrect: true },
@@ -21,7 +24,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What month is it?',
+			questionText: 'What month is it? (1)',
 			answerOptions: [
 				{ answerText: 'Apple', isCorrect: true },
 				{ answerText: 'Intel', isCorrect: false },
@@ -30,7 +33,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What is the date today?',
+			questionText: 'What is the date today? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -39,7 +42,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What time is it right now?',
+			questionText: 'What time is it right now? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -48,7 +51,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What country are we in?',
+			questionText: 'What country are we in? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -57,7 +60,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What town/city are we in?',
+			questionText: 'What town/city are we in? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -66,7 +69,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'What district/county are we in?',
+			questionText: 'What district/county are we in? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -75,7 +78,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Where are we now, and why?',
+			questionText: 'Where are we now, and why? (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -84,7 +87,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Examiner names three objects (e.g. apple, table, penny) and asks patient to repeat. 1 point for each correct answer. AFTER have the patient commit those 3 words to memory, repeating until correct.',
+			questionText: 'Examiner names three objects (e.g. apple, table, penny) and asks patient to repeat. 1 point for each correct answer. AFTER have the patient commit those 3 words to memory, repeating until correct. (3)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -93,7 +96,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Subtract 7 from 100, then repeat. Continue five times: 100, 93, 86, 79, 72, 65.',
+			questionText: 'Subtract 7 from 100, then repeat. Continue five times: 100, 93, 86, 79, 72, 65. (5)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -102,7 +105,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Ask for the names of the three objects learned earlier.',
+			questionText: 'Ask for the names of the three objects learned earlier. (3)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -111,7 +114,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Name two objects (e.g. pen, watch).',
+			questionText: 'Name two objects (e.g. pen, watch). (2)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -120,7 +123,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Repeat "No ifs, ands, or buts".',
+			questionText: 'Repeat "No ifs, ands, or buts". (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -129,7 +132,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Give three-stage command. 1 point per stage. (e.g. "Place index of right hand, on to your nose, then on your left ear")',
+			questionText: 'Give three-stage command. 1 point per stage. (e.g. "Place index of right hand, on to your nose, then on your left ear") (3)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -138,7 +141,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Ask the patient to read and obey a written command on a piece of paper. Instruction says "Close your eyes".',
+			questionText: 'Ask the patient to read and obey a written command on a piece of paper. Instruction says "Close your eyes". (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -147,7 +150,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Ask the patient to write a sentence. Must be sensible and have subject and verb.',
+			questionText: 'Ask the patient to write a sentence. Must be sensible and have subject and verb. (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
@@ -156,7 +159,7 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Ask patient to copy a pair of intersecting pentagons, with two overlaps.',
+			questionText: 'Ask patient to copy a pair of intersecting pentagons, with two overlaps. (1)',
 			answerOptions: [
 				{ answerText: '1', isCorrect: false },
 				{ answerText: '4', isCorrect: false },
