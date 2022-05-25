@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //24-30: no cognitive impairment
 //18-23: mild cognitive impairment
 //0-17: severe cognitive impairment
-export default function App() {
+export default function Quiz() {
 	const questions = [
 		{
 			questionText: 'What year is it? (1)',
