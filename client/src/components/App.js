@@ -5,7 +5,7 @@ import Login from './Login';
 import Doctor from './Doctor'
 import Patient from './Patient'
 // import Chart from './Chart'
-// import Quiz from './Quiz'
+import Quiz from './Quiz'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         <Route path="/" index element={<Login setCurrentUser={setCurrentUser}  setIsAuthenticated={setIsAuthenticated}/>}></Route>
         <Route path="/login" element={<Login />}></Route>
         {/* <Route path="/chart" element={<Chart currentUser={currentUser}/>}></Route> */}
-        {/* <Route path="/quiz" element={<Quiz currentUser={currentUser}/>}></Route> */}
+        <Route path="/quiz" element={<Quiz currentUser={currentUser}/>}></Route>
        { currentUser.role === "doctor" ?
         <Route path="/profile" element={<Doctor currentUser={currentUser} />}></Route>
         :
