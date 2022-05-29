@@ -19,6 +19,10 @@
     "chartjs-adapter-luxon": "^1.1.0",
     "esm": "^3.2.25",
     "luxon": "^2.4.0",
-    "react-chartjs-2": "^4.1.0"
+    "react-chartjs-2": "^4.1.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.52.1"
   }
 }

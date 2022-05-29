@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
-import '../Login.css';
+
+import '../Login.scss';
 
 const mode = 'login';
 
@@ -61,8 +61,8 @@ const Input = ({ id, type, label, disabled }) => (
     <input className="form-group__input" type={type} id={id} placeholder={label} disabled={disabled}/>
 );
 
-const App = () => (
-    <div className={`app app--is-${mode}`}>
+export default function App(){
+   return <div className={`app app--is-${mode}`}>
         <LoginComponent
             mode={mode}
             onSubmit={
@@ -72,7 +72,7 @@ const App = () => (
             }
         />
     </div>
-);
+};
 
-ReactDOM.render( <App/>, document.getElementById("app"));
+// ReactDOM.render( <App/>, document.getElementById("app"));
 

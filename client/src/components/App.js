@@ -1,10 +1,11 @@
 import '../App.css';
 import {BrowserRouter, Routes, Route,} from "react-router-dom";
+
 import Login from './Login';
 import Doctor from './Doctor'
 import Patient from './Patient'
-import Chart from './Chart'
-import Quiz from './Quiz'
+// import Chart from './Chart'
+// import Quiz from './Quiz'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -34,8 +35,8 @@ function App() {
       <Routes>
         <Route path="/" index element={<Login setCurrentUser={setCurrentUser}  setIsAuthenticated={setIsAuthenticated}/>}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/chart" element={<Chart currentUser={currentUser}/>}></Route>
-        <Route path="/quiz" element={<Quiz currentUser={currentUser}/>}></Route>
+        {/* <Route path="/chart" element={<Chart currentUser={currentUser}/>}></Route> */}
+        {/* <Route path="/quiz" element={<Quiz currentUser={currentUser}/>}></Route> */}
        { currentUser.role === "doctor" ?
         <Route path="/profile" element={<Doctor currentUser={currentUser} />}></Route>
         :
