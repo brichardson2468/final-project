@@ -1,9 +1,15 @@
 class SessionsController < ApplicationController
     def create 
-        doctor = Doctor.find_by(username: params[:username])
-        if doctor&.password == params[:password]
-            session[:doctor_id] = doctor.id
-            render json: doctor, status: :ok
+        user = if params[:user_type] == 'doctor'
+            Doctor.find_by(username: params[:username])
+        elsif params[:user_type] == 'patient'
+            Patient.find_by(username: params[:username])
+        end
+        
+        if user&.password == params[:password]
+            session[:current_user_id] = user.id
+            session[:current_user_type] = user.role
+            render json: user, status: :ok
         else
             render json: { error: {login: "Invalid username or password"}, status: :unauthorized }
         end
