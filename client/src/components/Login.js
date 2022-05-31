@@ -15,6 +15,12 @@ class LoginComponent extends React.Component {
         var newMode = this.state.mode === 'login' ? 'signup' : 'login';
         this.setState({ mode: newMode});
     }
+
+    onSubmit() {
+        console.log(`submitting login form to backend..`);
+        console.log(`STATE: ${JSON.stringify(this.state)}`);
+    }
+
     render() {
         return (
             <div>
@@ -28,7 +34,7 @@ class LoginComponent extends React.Component {
                             <label htmlFor="form-toggler"></label>
                         </div>
                     </header>
-                    <LoginForm mode={this.state.mode} onSubmit={this.props.onSubmit} />
+                    <LoginForm mode={this.state.mode} onSubmit={this.onSubmit.bind(this)} />
                 </section>
             </div>
         )
@@ -36,9 +42,35 @@ class LoginComponent extends React.Component {
 }
 
 class LoginForm extends React.Component {
+    // onSubmit() {
+    //     console.log(`submitting login form to backend..`);
+    //     console.log(`STATE: ${JSON.stringify(this.state)}`);
+    // }
+
+    onSubmit() {
+    
+        const data = {
+            "username": 'doctor3',
+            "password": 'pass',
+            "user_type": 'doctor',
+        }
+    
+        fetch(`http://localhost:3000/login`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(user => {
+              console.log(`Logged In as: ${JSON.stringify(user)}`);
+          })
+      }
+
     render() {
         return (
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={this.onSubmit()}>
             <div className="form-block__input-wrapper">
                 <div className="form-group form-group--login">
                     <Input type="text" id="username" label="user name" disabled={this.props.mode === 'signup'}/>
@@ -51,7 +83,7 @@ class LoginForm extends React.Component {
                     <Input type="password" id="repeatpassword" label="repeat password" disabled={this.props.mode === 'login'} />
                 </div>
             </div>
-            <button className="button button--primary full-width" type="submit">{this.props.mode === 'login' ? 'Log In' : 'Sign Up'}</button>
+            <button className="button button--primary full-width" type="submit">{this.props.mode === 'login' ? 'Log In 12' : 'Sign Up'}</button>
         </form>
         )
     }
@@ -65,11 +97,6 @@ export default function App(){
    return <div className={`app app--is-${mode}`}>
         <LoginComponent
             mode={mode}
-            onSubmit={
-                function() {
-                    console.log('submit');
-                }
-            }
         />
     </div>
 };

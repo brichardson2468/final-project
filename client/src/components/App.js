@@ -13,19 +13,19 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
-  useEffect(() => {
-    fetch('/auth')
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => {
-          setIsAuthenticated(false);
-          setCurrentUser(user);
-          console.log("doctor authenticated")
-        });
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetch('/auth')
+  //   .then((res) => {
+  //     if (res.ok) {
+  //       res.json()
+  //       .then((user) => {
+  //         setIsAuthenticated(true);
+  //         setCurrentUser(user);
+  //         console.log("doctor authenticated")
+  //       });
+  //     }
+  //   });
+  // }, []);
 
   if (!isAuthenticated) return <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setCurrentUser={setCurrentUser} />;
   

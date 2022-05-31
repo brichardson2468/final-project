@@ -13,7 +13,7 @@ class DoctorsController < ApplicationController
         end
     end
     
-    def show 
+    def show
         if params[:id]
             doctor = Doctor.find(params[:id])
             render json: doctor 
