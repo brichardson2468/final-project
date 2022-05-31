@@ -27,7 +27,7 @@ Patient.create(
     username: Faker::Color.unique.color_name,
     dob: Faker::Date.between(from: '1900-01-01', to: '1940-01-01'),
     doctor_id: 1,
-    password_digest: "pass",
+    password: "pass",
     role: "patient"
 )
 end
@@ -38,7 +38,7 @@ Patient.create(
     username: Faker::Color.unique.color_name,
     dob: Faker::Date.between(from: '1900-01-01', to: '1940-01-01'),
     doctor_id: 2,
-    password_digest: "pass",
+    password: "pass",
     role: "patient"
 )
 end
