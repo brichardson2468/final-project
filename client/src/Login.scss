@@ -48,7 +48,7 @@ body {
     right: 0;
     height: 100%;
     overflow-y: scroll;
-    background-image: url('https://unsplash.it/1366/768?image=568');
+    background-image: url('https://dana.org/wp-content/uploads/2019/08/how-brain-works-basics-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -61,11 +61,11 @@ body {
     height: 100%;
     @include transition(all .85s ease-in-out);
     &--is-login {
-        opacity: .92;
+        opacity: .7;
         background-color: $background2;
     }
     &--is-signup {
-        opacity: .94;
+        opacity: .7;
         background-color: $background1;
     }
 }

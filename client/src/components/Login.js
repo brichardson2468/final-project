@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
                 </div>
                 <div className="form-group form-group--signup">
                     <Input type="text" id="fullname" label="full name" disabled={this.props.mode === 'login'} />
-                    <Input type="email" id="email" label="email" disabled={this.props.mode === 'login'} />
+                    <Input type="username" id="username" label="user name" disabled={this.props.mode === 'login'} />
                     <Input type="password" id="createpassword" label="password" disabled={this.props.mode === 'login'} />
                     <Input type="password" id="repeatpassword" label="repeat password" disabled={this.props.mode === 'login'} />
                 </div>
@@ -74,5 +74,4 @@ export default function App(){
     </div>
 };
 
-// ReactDOM.render( <App/>, document.getElementById("app"));
 
